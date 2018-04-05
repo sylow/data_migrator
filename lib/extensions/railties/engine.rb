@@ -17,7 +17,7 @@ Rails::Engine.class_eval do
   protected
 
   def has_data_migrations?
-    paths["db/data_migrations"].existent.any?
+    !Dir['db/data_migrations/*'].empty?
   end
 
 end
